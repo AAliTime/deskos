@@ -1,0 +1,104 @@
+.start-menu {
+    position: absolute;
+    bottom: 45px;
+    left: 10px;
+    width: 200px;
+    background: rgba(15, 23, 42, 0.95);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.6);
+    display: none;
+    flex-direction: column;
+    z-index: 10000;
+    padding: 6px;
+    box-sizing: border-box;
+    color: var(--text-primary, #fff);
+}
+
+.start-menu.active {
+    display: flex;
+}
+
+.start-menu-header {
+    padding: 8px 10px;
+    font-size: 12px;
+    font-weight: bold;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 4px;
+    color: var(--accent-color, #3584e4);
+}
+
+.start-menu-item {
+    padding: 8px 10px;
+    font-size: 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.start-menu-item:hover {
+    background: rgba(52, 152, 219, 0.3);
+}
+
+/* Pantallas de Sistema (Apagado / Reinicio) */
+.system-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #000000;
+    z-index: 99999;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.system-overlay.active {
+    display: flex;
+    opacity: 1;
+}
+
+.power-on-btn {
+    background: rgba(255, 255, 255, 0.08);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    width: 65px;
+    height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 22px;
+    transition: all 0.2s;
+    color: #ff5555;
+}
+
+.power-on-btn:hover {
+    background: rgba(255, 85, 85, 0.2);
+    border-color: #ff5555;
+    transform: scale(1.05);
+}
+
+.restart-logo {
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+    animation: pulseLogo 1.5s infinite;
+    color: #3584e4;
+}
+
+@keyframes pulseLogo {
+    0% { opacity: 0.3; }
+    50% { opacity: 1; }
+    100% { opacity: 0.3; }
+}

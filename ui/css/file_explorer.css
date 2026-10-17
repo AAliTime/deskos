@@ -1,0 +1,103 @@
+.file-explorer-container {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    width: 100%;
+    color: var(--text-primary, #fff);
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.explorer-sidebar {
+    width: 140px;
+    min-width: 140px;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    font-size: 12px;
+    background: rgba(0, 0, 0, 0.15);
+}
+
+.explorer-sidebar-title {
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: var(--text-secondary, #aaa);
+    text-transform: uppercase;
+    font-size: 10px;
+    letter-spacing: 0.5px;
+}
+
+.explorer-sidebar-item {
+    padding: 6px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 2px;
+}
+
+.explorer-sidebar-item:hover {
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.explorer-sidebar-item.active {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.explorer-main {
+    flex: 1;
+    padding: 12px;
+    overflow-y: auto;
+}
+
+.explorer-path {
+    font-size: 11px;
+    color: var(--text-secondary, #aaa);
+    margin-bottom: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding-bottom: 6px;
+}
+
+.file-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+    gap: 12px;
+}
+
+.file-item {
+    text-align: center;
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 4px;
+}
+
+.file-item:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.file-icon-img {
+    width: 32px;
+    height: 32px;
+    margin: 0 auto 4px auto;
+    display: block;
+    object-fit: contain;
+}
+
+.file-icon-badge {
+    width: 32px;
+    height: 32px;
+    background: #e74c3c;
+    margin: 0 auto 4px auto;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 9px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.file-label {
+    font-size: 11px;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

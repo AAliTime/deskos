@@ -1,0 +1,312 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: system-ui, -apple-system, sans-serif;
+    background-color: var(--bg-desktop);
+    color: var(--text-primary);
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.desktop {
+    flex: 1;
+    position: relative;
+    background: radial-gradient(circle at center, #1e293b 0%, #0f172a 100%);
+    padding: 16px;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.taskbar {
+    height: 48px;
+    background-color: rgba(22, 27, 34, 0.85);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(48, 54, 61, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+    z-index: 1000;
+}
+
+.taskbar-start {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.start-button {
+    background-color: #21262d;
+    border: 1px solid var(--border-color);
+    color: #c9d1d9;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.start-button:hover {
+    background-color: #30363d;
+}
+
+.taskbar-apps {
+    display: flex;
+    gap: 8px;
+}
+
+.taskbar-app {
+    background-color: #21262d;
+    border: 1px solid var(--border-color);
+    color: #c9d1d9;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.taskbar-tray {
+    font-size: 12px;
+    font-family: monospace;
+    color: var(--text-secondary);
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.desktop-folder {
+    width: 64px;
+    height: 64px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+}
+
+.desktop-folder-icon {
+    width: 48px;
+    height: 48px;
+    background-image: url('../icons/folder.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.desktop-folder-label {
+    font-size: 11px;
+    color: #ffffff;
+    text-align: center;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.desktop-file {
+    width: 64px;
+    height: 64px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+}
+
+.desktop-file-icon {
+    width: 40px;
+    height: 48px;
+    background-color: #8b949e;
+    border-radius: 4px;
+    position: relative;
+}
+
+.desktop-file-icon::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-width: 8px;
+    border-style: solid;
+    border-color: #0b0f19 #0b0f19 transparent transparent;
+}
+
+.desktop-file-label {
+    font-size: 11px;
+    color: #ffffff;
+    text-align: center;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.os-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 20000;
+}
+
+.os-modal-content {
+    background-color: var(--bg-window);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 16px;
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+.os-modal-content h3 {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+}
+
+.os-modal-content input {
+    background-color: #0d1117;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 8px;
+    color: var(--text-primary);
+    font-size: 12px;
+    outline: none;
+}
+
+.os-modal-content input:focus {
+    border-color: var(--accent);
+}
+
+.os-modal-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+}
+
+.os-modal-buttons button {
+    background-color: #21262d;
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 11px;
+    cursor: pointer;
+}
+
+.os-modal-buttons button:hover {
+    background-color: #30363d;
+}
+
+.taskbar {
+    height: 48px;
+    background-color: rgba(22, 27, 34, 0.85);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(48, 54, 61, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 12px;
+    z-index: 1000;
+}
+
+.taskbar-start {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.start-button,
+.taskbar-app-btn {
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    padding: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.start-button:hover,
+.taskbar-app-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: var(--border-color);
+}
+
+.taskbar-icon {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+.taskbar-apps {
+    display: flex;
+    gap: 4px;
+    margin-left: 8px;
+}
+
+.taskbar-tray {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    font-size: 11px;
+    font-family: monospace;
+    color: var(--text-secondary);
+    line-height: 1.2;
+}
+
+.clock-display {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.desktop-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80px;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.desktop-icon:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.desktop-icon-img {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    margin-bottom: 5px;
+}
+
+.desktop-icon-label {
+    color: var(--text-primary, #fff);
+    font-size: 12px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+}

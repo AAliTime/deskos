@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>DeskOS</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="desktop" id="desktop"></div>
+
+    <div class="desktop-icon" id="desktop-calculator" title="Calculadora">
+        <img src="icons/calculator.png" alt="Calculadora" class="desktop-icon-img" />
+        <span class="desktop-icon-label">Calculator</span>
+    </div>
+    <div class="desktop-icon" id="desktop-calendar" title="Calendario" style="left: 110px;">
+        <img src="icons/calendar.png" alt="Calendario" class="desktop-icon-img" />
+        <span class="desktop-icon-label">Calendar</span>
+    </div>
+    <div class="desktop-icon" id="desktop-text-editor" title="Text Editor" style="left: 200px;">
+        <img src="icons/text_editor.png" alt="Text Editor" class="desktop-icon-img" />
+        <span class="desktop-icon-label">Text Editor</span>
+    </div>
+    <div class="desktop-icon" id="desktop-browser" title="Browser" style="left: 290px;">
+        <img src="icons/browser.png" alt="Browser" class="desktop-icon-img" />
+        <span class="desktop-icon-label">Browser</span>
+    </div>
+    <div class="desktop-icon" id="desktop-music-player" title="Music Player" style="left: 380px;">
+        <img src="icons/music_player.png" alt="Music Player" class="desktop-icon-img" />
+        <span class="desktop-icon-label">Music Player</span>
+    </div>
+    <div class="desktop-icon" id="desktop-terminal" title="Terminal" style="left: 470px;">
+        <img src="icons/terminal.png" alt="Terminal" class="desktop-icon-img" />
+        <span class="desktop-icon-label">Terminal</span>
+    </div>
+    <div class="desktop-icon" id="desktop-settings" title="Settings" style="left: 560px;">
+        <img src="icons/settings.png" alt="Settings" class="desktop-icon-img" />
+        <span class="desktop-icon-label">Settings</span>
+    </div>
+    <div class="desktop-icon" id="desktop-paint" title="Paint" style="left: 650px;">
+        <img src="icons/paint.png" alt="Paint" class="desktop-icon-img" />
+        <span class="desktop-icon-label">Paint</span>
+    </div>
+
+    <!-- Menú Contextual del Escritorio -->
+    <div id="context-menu" class="context-menu">
+        <div id="menu-nuevo-archivo" class="menu-item">Nuevo Archivo</div>
+        <div id="menu-nueva-carpeta" class="menu-item">Nueva Carpeta</div>
+    </div>
+
+    <!-- Modal para nombres de archivos/carpetas -->
+    <div id="input-modal" class="os-modal" style="display: none;">
+        <div class="os-modal-content">
+            <h3 id="modal-title">Nuevo Elemento</h3>
+            <input type="text" id="modal-input" autocomplete="off" />
+            <div class="os-modal-buttons">
+                <button id="modal-cancel">Cancelar</button>
+                <button id="modal-ok">Aceptar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Barra de Tareas Principal -->
+    <footer class="taskbar">
+        <div class="taskbar-start">
+            <button class="start-button" id="start-menu-btn">
+                <img src="icons/menu.png" alt="Menú" class="taskbar-icon" />
+            </button>
+            <div class="taskbar-apps">
+                <button class="taskbar-app-btn" id="btn-system-monitor" title="System Monitor">
+                    <img src="icons/system_monitor.png" alt="Monitor" class="taskbar-icon" />
+                </button>
+                <button class="taskbar-app-btn" id="btn-file-explorer" title="Explorador de Archivos">
+                    <img src="icons/file_explorer.png" alt="Explorador" class="taskbar-icon" />
+                </button>
+                <button class="taskbar-app-btn" title="Navegador Web">
+                    <img src="icons/browser.png" alt="Navegador" class="taskbar-icon" />
+                </button>
+            </div>
+        </div>
+        <div class="taskbar-tray">
+            <div id="clock-display" class="clock-display">--:--:--</div>
+            <div id="date-display" class="date-display">--/--/----</div>
+        </div>
+    </footer>
+
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>
